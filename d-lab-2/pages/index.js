@@ -1,17 +1,27 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Link from 'next/Link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
     <div>
       <div>
-        <h1>Dungeons Lab</h1>
+        <h1>
+          <Link href='/'>
+            <a>Dungeons Lab</a>
+          </Link>
+        </h1>
       </div>
+
       <div>
-        <a href='/characters'>Characters</a>
-        <a href='/monsters'>Monsters</a>
-        <a href='/encounters'>Encounters</a>
+        <Link href='/characters'>
+          <a>Characters</a>
+        </Link>
+        <Link href='/monsters'>
+          <a>Monsters</a>
+        </Link>
+        <Link href='/encounters'>
+          <a>Encounters</a>
+        </Link>
       </div>
 
       <div>
