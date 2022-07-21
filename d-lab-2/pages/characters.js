@@ -1,4 +1,15 @@
+import axios from 'axios'
 import Link from 'next/Link'
+
+let data
+
+axios.get('http://localhost:3000/api/hello')
+.then((res) => {
+  console.log(res.data)
+})
+.catch((err) => {
+  console.log(`There was an error: ${err}`)
+})
 
 export default function Characters() {
   return (
@@ -10,7 +21,7 @@ export default function Characters() {
           </Link>
         </h1>
       </div>
-      
+
       <div>
         <Link href='/characters'>
           <a>Characters</a>
@@ -25,6 +36,7 @@ export default function Characters() {
 
       <div>
         <h2>this is the characters page</h2>
+        <p>nothing to see here</p>
       </div>
     </div>
   )

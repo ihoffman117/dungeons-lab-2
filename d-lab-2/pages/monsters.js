@@ -1,4 +1,12 @@
+import axios from 'axios'
 import Link from 'next/Link'
+
+let monsters = []
+
+axios.get('http://localhost:3000/api/monsters')
+  .then((response) => {
+    monsters = response.data
+  })
 
 export default function Monsters() {
   return (
@@ -25,6 +33,11 @@ export default function Monsters() {
 
       <div>
         <h2>this is the monsters page</h2>
+        <ul>
+          {monsters.map((monster) => {
+            return(<li>{monster.name}</li>)
+          })}
+        </ul>
       </div>
     </div>
   )
